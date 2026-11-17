@@ -10,5 +10,12 @@ func NewApp() *fiber.App {
 		AppName: "Gym Management System",
 	})
 
+	app.Get("/health", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{
+			"status":  "success",
+			"message": "Gym Management System API is running",
+		})
+	})
+
 	return app
 }
